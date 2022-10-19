@@ -1,0 +1,53 @@
+package test;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class test22 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int testcase = in.nextInt();
+		for(int i=0; i<testcase; i++) {
+			int N = in.nextInt();
+			int M = in.nextInt();
+			int cnt =0;
+			ArrayList<Integer> arr = new ArrayList<Integer>();
+			ArrayList<Integer> copyarr = new ArrayList<Integer>();
+			for(int j=0; j<N; j++) {
+				int num=in.nextInt();
+				arr.add(num);
+				for(int k=1; k<N; k++) {
+					int max=0;
+					if(arr.get(j)<arr.get(k)) {
+						max = arr.get(k);
+						int a = arr.get(j);
+						arr.add(a);
+						System.arraycopy(arr, max, copyarr, a, N);
+					}
+//					else if(arr.get(j)>arr.get(k)) {
+//						
+//						arr.remove(arr.get(j));
+//						cnt++;
+//					}
+//					if(arr.get(M)==max) {
+//						arr.add(0);
+//						arr.remove(arr.get(M));
+//						
+//						System.out.println(cnt+1);
+//					}
+				}
+				System.out.println(copyarr.get(0));
+				System.out.println(copyarr.get(1));
+				System.out.println(copyarr.get(2));
+				System.out.println(copyarr.get(3));
+				System.out.println(copyarr.get(4));
+				System.out.println(copyarr.get(5));
+				System.out.println(copyarr.get(6));
+				System.out.println(copyarr.get(7));
+				
+				
+			}
+		}
+
+	}
+
+}
